@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Singer Presentation</title>
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ddd; /* Grey background for gaps */
+        }
+
+        /* Container for all slides */
+        .slides-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px; /* Grey gap between slides */
+            padding: 20px;
+        }
+
+        /* Styling for each slide with dynamic width based on viewport */
+        .slide {
+            width: 90%; /* Adjust to fit the screen size */
+            max-width: 1200px; /* Set a max-width to prevent slides from becoming too large */
+            aspect-ratio: 16 / 9; /* Landscape aspect ratio, more common for screens */
+            background-color: white;
+            border: 2px solid #ccc;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box; /* Ensures padding doesn't affect width */
+        }
+
+        /* Title styling */
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30px;
+            font-weight: lighter;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 50px; /* Adjust logo size */
+            height: auto;
+        }
+
+        /* Content styling */
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* For first and third slides */
+            align-items: center;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* Second Slide content styling */
+        .content-second-slide {
+            display: flex;
+            flex-direction: row; /* Side-by-side layout */
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        /* Left text styling for second slide */
+        .text-content {
+            flex: 1;
+            font-size: 14px;
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Image on the right for second slide */
+        .image-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image-content img {
+			objec-align: center;
+            max-width: 80%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+		
+
+        /* Text box styling for text below the image */
+        .text-box {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #333;
+            max-width: 80%;
+        }
+		        /* Video on the right for third slide */
+        .media-content video {
+            max-width: 90%; /* Scale down the video width */
+            max-height: 90%; /* Ensure it doesn't overflow */
+            object-fit: contain; /* Maintain aspect ratio */
+    </style>
+</head>
+<body>
+    <div class="slides-container">
+        <!-- Slide 1 (Unchanged) -->
+        <div class="slide first-slide"> <img class="logo" src="logo.jpg" alt="Logo">
+          
+          <div class="title">GEORGE SINGER</div>
+            <div class="content">
+                <img src="FIRST.png" alt="Centered Image"> <!-- Centered and smaller image for the first slide -->
+                <div class="text-box">
+					<p>Feature lighting installation for BABC&nbsp;</p>
+				  <p>Rupert Parkes &amp; George Singer&nbsp;</p>
+				  <p>Inspiration presentation&nbsp;</p>
+					<p>11th December 2024 </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 in the requested format -->
+        <div class="slide">
+            <div class="title">GEORGE SINGER</div>
+            <img class="logo" src="logo.jpg" alt="Logo">
+            <div class="content-second-slide">
+                <div class="text-content">
+                    <h2>ABOUT</h2>
+                    <p>George Singer is a multi-award-winning artist based in London. In 2017, George won first prize for best lighting installation at the prestigious International Design and Architecture Awards, as well as first prize at the Darc Awards. Both prizes were for Zephyr: a 60-meter-long, permanent lighting installation for the Fairmont Hotel in St Andrews, Scotland. His design methodology combines conceptual thinking with a thorough understanding of materials and production techniques. He produces objects of beauty, allowing the materials and form to work in harmony to dictate the aesthetic.</p>
+
+                    <h2>METHOD</h2>
+                    <p>All George Singer products are hand-made in his London studio. All materials are UK-sourced and all installations are carried out by George and his team. As well as designing for a variety of London-based architects and interior design companies, George also carries out installations abroad in countries such as Switzerland and Dubai.</p>
+
+                    <h2>STORY</h2>
+                    <p>George graduated from Central Saint Martins College of Art and Design in 2002. After working at numerous design houses, included Meddings Associates, George became an independent designer in 2006. His first success came after exhibiting the Medicine Chandelier at London's 100% Design Exhibition, and he won the opportunity to design three large chandeliers for Conran's famous Bluebird restaurant in Chelsea, West London.</p>
+                </div>
+                <div class="image-content">
+                    <img src="second.jpg" alt="Example Image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 with Video -->
+      <div class="slide">
+            <div class="title">GEORGE SINGER</div>
+            <img class="logo" src="logo.jpg" alt="Logo">
+            <div class="content-second-slide">
+                <div class="text-content">
+                    <h2>LUA INSTALLATION</h2>
+                    <p>Lua is a lighting installation recently </p>
+				    <p>completed for a private client in North Vietnam.</p>
+
+                    <p>Consisting of more than twenty-thousand glass</p>
+                    <p>balls, the overall form of Lua is inspired by the</p>
+                    <p>movement of silk.</p>
+
+                    <p>The form was designed in collaboration with</p>
+                    <p>Berlin-based digital artists, Onformative. Using</p>
+                    <p>Fluid dynamics and fabric simulation, we</p>
+                    <p>generated a truly organic form incorporating</p>
+                    <p>beautiful undulating sweeping curves and folds</p>
+                    <p>which would be impossible to design by eye.</p>
+              </div>
+                <div class="media-content">
+                <video controls>
+                    <source src="lua_end_sequence (2160p).mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+        </div>
+      </div>
+
+        <!-- Slide 4 with Text -->
+        <div class="slide">
+            <div class="title">GEORGE SINGER</div>
+            <img class="logo" src="logo.png" alt="Logo">
+            <div class="content">
+                <h2>Another Text Slide</h2>
+                <p>Include any text-based content here. Add as much detail as needed.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
