@@ -26,9 +26,9 @@
         .slide {
             width: 90%; /* Adjust to fit the screen size */
             max-width: 1200px; /* Set a max-width to prevent slides from becoming too large */
-            aspect-ratio: 16 / 9; /* Landscape aspect ratio, more common for screens */
+            aspect-ratio: 14 / 9; /* Landscape aspect ratio, more common for screens */
             background-color: white;
-            border: 2px solid #ccc;
+            border: 2 px solid #ccc;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
@@ -68,11 +68,11 @@
 
         /* Second Slide content styling */
         .content-second-slide {
-            display: flex;
-            flex-direction: row; /* Side-by-side layout */
-            justify-content: space-between;
-            align-items: center;
-            text-align: left;
+    display: flex;
+    flex-direction: row; /* Side-by-side layout */
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
         }
 
         /* Left text styling for second slide */
@@ -85,8 +85,8 @@
 
         /* Image on the right for second slide */
         .image-content {
-            flex: 1;
-            text-align: center;
+    flex: 1;
+    text-align: center;
         }
 
         .image-content img {
@@ -94,8 +94,41 @@
             max-width: 80%;
             max-height: 100%;
             object-fit: contain;
+			margin-top: auto; /* Pushes the image down to the center */
+            margin-bottom: auto;
         }
-		
+		    /* Adjust content-second-slide to align items better */
+    .content-second-slide {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; /* Align items vertically */
+        height: 100%; /* Ensure the slide content fills the slide height */
+    }
+
+    /* Adjust image size in the first slide */
+
+    /* Center the content in the first slide */
+    .first-slide .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Horizontally center the content */
+        justify-content: center; /* Vertically center the content */
+        height: 100%; /* Make the content container fill the slide */
+    }
+
+    /* Adjust image size and maintain aspect ratio */
+    .first-slide .content img {
+        max-width: 50%; /* Set maximum width to 50% of the slide's width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Ensure the text-box is below the image */
+    .first-slide .text-box {
+        margin-top: 20px; /* Add space between the image and text box */
+        text-align: center; /* Center-align the text */
+    }
+
 
         /* Text box styling for text below the image */
         .text-box {
@@ -173,7 +206,7 @@
               </div>
                 <div class="media-content">
                 <video controls>
-                    <source src="1.mp4" type="video/mp4">
+                    <source src="lua_end_sequence (2160p).mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 </div>
