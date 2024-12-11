@@ -13,214 +13,83 @@
             background-color: #ddd; /* Grey background for gaps */
         }
 
-        /* Container for all slides */
-        .slides-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; /* Grey gap between slides */
-            padding: 20px;
-        }
-
-        /* Styling for each slide with dynamic width based on viewport */
+        /* Common slide container styling */
         .slide {
             width: 90%; /* Adjust to fit the screen size */
-            max-width: 1200px; /* Set a max-width to prevent slides from becoming too large */
-            aspect-ratio: 14 / 9; /* Landscape aspect ratio, more common for screens */
+            max-width: 1200px; /* Set a max-width */
+            aspect-ratio: 297 / 210; /* A4 Landscape ratio */
             background-color: white;
-            border: 2 px solid #ccc;
+            margin: 20px auto;
+            border: 2px solid #ccc;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
             position: relative;
-            padding: 20px;
-            box-sizing: border-box; /* Ensures padding doesn't affect width */
-        }
-
-        /* Title styling */
-        .title {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 30px;
-            font-weight: lighter;
-        }
-
-        /* Logo styling */
-        .logo {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 50px; /* Adjust logo size */
-            height: auto;
-        }
-
-        /* Content styling */
-        .content {
             display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* For first and third slides */
             align-items: center;
-            text-align: center;
-            flex-grow: 1;
+            justify-content: center;
+            overflow: hidden; /* Ensures content fits within the slide */
         }
 
-        /* Second Slide content styling */
-        .content-second-slide {
-    display: flex;
-    flex-direction: row; /* Side-by-side layout */
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
+        /* Styling for images to cover the slide */
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the entire slide */
         }
 
-        /* Left text styling for second slide */
-        .text-content {
-            flex: 1;
-            font-size: 14px;
-            color: #333;
-            padding: 20px;
-        }
-
-        /* Image on the right for second slide */
-        .image-content {
-    flex: 1;
-    text-align: center;
-        }
-
-        .image-content img {
-			objec-align: center;
-            max-width: 80%;
-            max-height: 100%;
-            object-fit: contain;
-			margin-top: auto; /* Pushes the image down to the center */
-            margin-bottom: auto;
-        }
-		    /* Adjust content-second-slide to align items better */
-    .content-second-slide {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center; /* Align items vertically */
-        height: 100%; /* Ensure the slide content fills the slide height */
-    }
-
-    /* Adjust image size in the first slide */
-
-    /* Center the content in the first slide */
-    .first-slide .content {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Horizontally center the content */
-        justify-content: center; /* Vertically center the content */
-        height: 100%; /* Make the content container fill the slide */
-    }
-
-    /* Adjust image size and maintain aspect ratio */
-    .first-slide .content img {
-        max-width: 50%; /* Set maximum width to 50% of the slide's width */
-        height: auto; /* Maintain aspect ratio */
-    }
-
-    /* Ensure the text-box is below the image */
-    .first-slide .text-box {
-        margin-top: 20px; /* Add space between the image and text box */
-        text-align: center; /* Center-align the text */
-    }
-
-
-        /* Text box styling for text below the image */
-        .text-box {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: 400;
-            color: #333;
-            max-width: 80%;
-        }
-		        /* Video on the right for third slide */
-        .media-content video {
-            max-width: 90%; /* Scale down the video width */
+        /* Video styling */
+        .slide video {
+            max-width: 90%; /* Scale the video to fit within the slide */
             max-height: 90%; /* Ensure it doesn't overflow */
-            object-fit: contain; /* Maintain aspect ratio */
+            object-fit: contain;
+            position: absolute;
+            z-index: 1; /* Keeps the video above the image */
+        }
+
+        /* Optional video alignment (right) */
+        .slide.video-right video {
+            position: absolute;
+            right: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="slides-container">
-        <!-- Slide 1 (Unchanged) -->
-        <div class="slide first-slide"> <img class="logo" src="logo.jpg" alt="Logo">
-          
-          <div class="title">GEORGE SINGER</div>
-            <div class="content">
-                <img src="FIRST.png" alt="Centered Image"> <!-- Centered and smaller image for the first slide -->
-                <div class="text-box">
-					<p>Feature lighting installation for BABC&nbsp;</p>
-				  <p>Rupert Parkes &amp; George Singer&nbsp;</p>
-				  <p>Inspiration presentation&nbsp;</p>
-					<p>11th December 2024 </p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 2 in the requested format -->
+        <!-- Slide 1: Fullscreen image -->
         <div class="slide">
-            <div class="title">GEORGE SINGER</div>
-            <img class="logo" src="logo.jpg" alt="Logo">
-            <div class="content-second-slide">
-                <div class="text-content">
-                    <h2>ABOUT</h2>
-                    <p>George Singer is a multi-award-winning artist based in London. In 2017, George won first prize for best lighting installation at the prestigious International Design and Architecture Awards, as well as first prize at the Darc Awards. Both prizes were for Zephyr: a 60-meter-long, permanent lighting installation for the Fairmont Hotel in St Andrews, Scotland. His design methodology combines conceptual thinking with a thorough understanding of materials and production techniques. He produces objects of beauty, allowing the materials and form to work in harmony to dictate the aesthetic.</p>
-
-                    <h2>METHOD</h2>
-                    <p>All George Singer products are hand-made in his London studio. All materials are UK-sourced and all installations are carried out by George and his team. As well as designing for a variety of London-based architects and interior design companies, George also carries out installations abroad in countries such as Switzerland and Dubai.</p>
-
-                    <h2>STORY</h2>
-                    <p>George graduated from Central Saint Martins College of Art and Design in 2002. After working at numerous design houses, included Meddings Associates, George became an independent designer in 2006. His first success came after exhibiting the Medicine Chandelier at London's 100% Design Exhibition, and he won the opportunity to design three large chandeliers for Conran's famous Bluebird restaurant in Chelsea, West London.</p>
-                </div>
-                <div class="image-content">
-                    <img src="second.jpg" alt="Example Image">
-                </div>
-            </div>
+            <img src="firstslide11.png" alt="Slide 1">
         </div>
 
-        <!-- Slide 3 with Video -->
-      <div class="slide">
-            <div class="title">GEORGE SINGER</div>
-            <img class="logo" src="logo.jpg" alt="Logo">
-            <div class="content-second-slide">
-                <div class="text-content">
-                    <h2>LUA INSTALLATION</h2>
-                    <p>Lua is a lighting installation recently </p>
-				    <p>completed for a private client in North Vietnam.</p>
-
-                    <p>Consisting of more than twenty-thousand glass</p>
-                    <p>balls, the overall form of Lua is inspired by the</p>
-                    <p>movement of silk.</p>
-
-                    <p>The form was designed in collaboration with</p>
-                    <p>Berlin-based digital artists, Onformative. Using</p>
-                    <p>Fluid dynamics and fabric simulation, we</p>
-                    <p>generated a truly organic form incorporating</p>
-                    <p>beautiful undulating sweeping curves and folds</p>
-                    <p>which would be impossible to design by eye.</p>
-              </div>
-                <div class="media-content">
-                <video controls>
-                    <source src="lua_end_sequence (2160p).mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                </div>
-        </div>
-      </div>
-
-        <!-- Slide 4 with Text -->
+        <!-- Slide 2: Fullscreen image with centered video -->
         <div class="slide">
-            <div class="title">GEORGE SINGER</div>
-            <img class="logo" src="logo.png" alt="Logo">
-            <div class="content">
-                <h2>Another Text Slide</h2>
-                <p>Include any text-based content here. Add as much detail as needed.</p>
-            </div>
+            <img src="secondslide22.png" alt="Slide 2 Background">
+           
+            
+        </div>
+
+        <!-- Slide 3: Fullscreen image with right-aligned video -->
+        <div class="slide video-right">
+            <img src="thirdslide1.png" alt="Slide 3 Background">
+            <video controls>
+                <source src="lua_end_sequence (360p).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <!-- Slide 4: Fullscreen image -->
+        <div class="slide video-right">
+            <img src="fourthslide1.png" alt="Slide 3 Background">
+            <video controls>
+                <source src="george_singer,_zephyr_installation,_scotland_2017 (360p).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <!-- Slide 5: Fullscreen image with centered video -->
+        <div class="slide">
+            <img src="slide5-image.jpg" alt="Slide 5 Background">
+            <video controls>
+                <source src="slide5-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </body>
