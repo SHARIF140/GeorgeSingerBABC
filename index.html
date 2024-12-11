@@ -51,23 +51,15 @@
             right: 10px;
         }
 
-        /* Double size for video in the sixth slide */
-        .sixth-slide video {
-            max-width: 120%; /* Double the size of default video */
-            max-height: 120%;
-        }
+
 
         /* Responsive video size for mobile screens */
         @media screen and (max-width: 768px) {
             .slide video {
-                max-width: 80%; /* Adjust video size on mobile */
-                max-height: 80%;
+                max-width: 60%; /* Adjust video size on mobile */
+                max-height: 60%;
             }
 
-            .sixth-slide video {
-                max-width: 160%; /* Double the adjusted size for mobile */
-                max-height: 160%;
-            }
         }
     </style>
 </head>
@@ -109,7 +101,7 @@
         <!-- Slide 6: Fullscreen image with doubled video size -->
         <div class="slide sixth-slide">
             <img src="sixthslide.png" alt="Slide 6 Background">
-            <video width="1300" controls="controls" >
+            <video width="1100" controls="controls" >
               <source src="unnamed_soundsculpture (240p).mp4" type="video/mp4">
               Your browser does not support the video tag. </video>
         </div>
