@@ -50,6 +50,67 @@
             position: absolute;
             right: 20px;
         }
+                /* Video wrapper */
+        .video-wrapper {
+            position: relative;
+            width: 90%; /* Adjust video size */
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Video element styling */
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Custom play button styling */
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px; /* Adjust size of play button */
+            height: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .play-button::before {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 20px; /* Triangle shape for the play button */
+            border-color: transparent transparent transparent white;
+        }
+
+        /* Hide the custom play button when the video is playing */
+        .video-wrapper.playing .play-button {
+            display: none;
+        }
+
+        /* Responsive video size for mobile screens */
+        @media screen and (max-width: 768px) {
+            .video-wrapper {
+                width: 80%; /* Adjust video size on mobile */
+            }
+
+            .play-button {
+                width: 30px; /* Smaller play button on mobile */
+                height: 30px;
+            }
+
+            .play-button::before {
+                border-width: 6px 0 6px 12px; /* Adjust triangle size */
+            }
+        }
     </style>
 </head>
 <body>
