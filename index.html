@@ -38,81 +38,35 @@
 
         /* Video styling */
         .slide video {
-            max-width: 60%; /* Scale the video to fit within the slide */
-            max-height: 60%; /* Ensure it doesn't overflow */
+            max-width: 60%; /* Default scale for video */
+            max-height: 60%;
             object-fit: contain;
             position: absolute;
             z-index: 1; /* Keeps the video above the image */
-        }
-        .sixth-slide video {
-         max-width: 160%; /* Double the adjusted size for mobile */
-         max-height: 160%;
         }
 
         /* Optional video alignment (right) */
         .slide.video-right video {
             position: absolute;
-            right: 20px;
-        }
-                /* Video wrapper */
-        .video-wrapper {
-            position: relative;
-            width: 90%; /* Adjust video size */
-            max-width: 90%;
-            max-height: 90%;
+            right: 10px;
         }
 
-        /* Video element styling */
-        .video-wrapper video {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Custom play button styling */
-        .play-button {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            transform: translate(-50%, -50%);
-            width: 10px; /* Adjust size of play button */
-            height: 10px;
-            background: rgba(0, 0, 0, 0.6);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .play-button::before {
-            content: '';
-            display: block;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 5px 0 5px 10px; /* Triangle shape for the play button */
-            border-color: transparent transparent transparent white;
-        }
-
-        /* Hide the custom play button when the video is playing */
-        .video-wrapper.playing .play-button {
-            display: none;
+        /* Double size for video in the sixth slide */
+        .sixth-slide video {
+            max-width: 120%; /* Double the size of default video */
+            max-height: 120%;
         }
 
         /* Responsive video size for mobile screens */
         @media screen and (max-width: 768px) {
-            .video-wrapper {
-                width: 10%; /* Adjust video size on mobile */
+            .slide video {
+                max-width: 80%; /* Adjust video size on mobile */
+                max-height: 80%;
             }
 
-            .play-button {
-                width: 1px; /* Smaller play button on mobile */
-                height: 1px;
-            }
-
-            .play-button::before {
-                border-width: 3px 0 3px 6px; /* Adjust triangle size */
+            .sixth-slide video {
+                max-width: 160%; /* Double the adjusted size for mobile */
+                max-height: 160%;
             }
         }
     </style>
@@ -124,12 +78,10 @@
             <img src="firstslide11.png" alt="Slide 1">
         </div>
 
-        <!-- Slide 2: Fullscreen image with centered video -->
+        <!-- Slide 2: Fullscreen image -->
         <div class="slide">
             <img src="secondslide22.png" alt="Slide 2 Background">
-           
-            
-        </div>
+      </div>
 
         <!-- Slide 3: Fullscreen image with right-aligned video -->
         <div class="slide video-right">
@@ -140,27 +92,26 @@
             </video>
         </div>
 
-        <!-- Slide 4: Fullscreen image -->
+        <!-- Slide 4: Fullscreen image with right-aligned video -->
         <div class="slide video-right">
-            <img src="fourthslide.png" alt="Slide 3 Background">
+            <img src="fourthslide.png" alt="Slide 4 Background">
             <video controls>
                 <source src="george_singer,_zephyr_installation,_scotland_2017 (360p).mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
-         <!-- Slide 5: Fullscreen image  -->
-            <div class="slides-container">
-        <!-- Slide 1: Fullscreen image -->
+
+      <!-- Slide 5: Fullscreen image -->
         <div class="slide">
             <img src="fifthslide1.png" alt="Slide 5">
         </div>
-        <!-- Slide 6: Fullscreen image with centered video -->
-        <div class="slide">
+
+        <!-- Slide 6: Fullscreen image with doubled video size -->
+        <div class="slide sixth-slide">
             <img src="sixthslide.png" alt="Slide 6 Background">
-            <video controls>
-                <source src="unnamed_soundsculpture (240p).mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <video width="900" controls="controls" >
+              <source src="unnamed_soundsculpture (240p).mp4" type="video/mp4">
+              Your browser does not support the video tag. </video>
         </div>
     </div>
 </body>
