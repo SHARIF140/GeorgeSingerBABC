@@ -50,13 +50,13 @@
             position: absolute;
             right: 10px;
         }
-                /* Double size for video in the sixth slide */
-        .sixth-slide video {
-            max-width: 90%; /* Double the size of default video */
+
+        /* Double size for video in specific slides */
+        .sixth-slide video,
+        .seventh-slide video {
+            max-width: 90%; /* Larger video size */
             max-height: 90%;
         }
-
-
 
         /* Responsive video size for mobile screens */
         @media screen and (max-width: 768px) {
@@ -65,6 +65,11 @@
                 max-height: 60%;
             }
 
+            .sixth-slide video,
+            .seventh-slide video {
+                max-width: 80%; /* Adjust larger videos on mobile */
+                max-height: 80%;
+            }
         }
     </style>
 </head>
@@ -78,7 +83,7 @@
         <!-- Slide 2: Fullscreen image -->
         <div class="slide">
             <img src="secondslide22.png" alt="Slide 2 Background">
-      </div>
+        </div>
 
         <!-- Slide 3: Fullscreen image with right-aligned video -->
         <div class="slide video-right">
@@ -98,7 +103,7 @@
             </video>
         </div>
 
-      <!-- Slide 5: Fullscreen image -->
+        <!-- Slide 5: Fullscreen image -->
         <div class="slide">
             <img src="fifthslide1.png" alt="Slide 5">
         </div>
@@ -106,16 +111,43 @@
         <!-- Slide 6: Fullscreen image with doubled video size -->
         <div class="slide sixth-slide">
             <img src="sixthslide1.png" alt="Slide 6 Background">
-            <video width="1200" controls="controls" >
-              <source src="unnamed_soundsculpture (240p).mp4" type="video/mp4">
-              Your browser does not support the video tag. </video>
+            <video width="1200" controls>
+                <source src="unnamed_soundsculpture (240p).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
-        		 <div class="slide seventh-slide">
+
+        <!-- Slide 7: Fullscreen image with doubled video size -->
+        <div class="slide seventh-slide">
             <img src="seventh.png" alt="Slide 7 Background">
-            <video width="1100" controls="controls" >
-              <source src="alexag.mp4" type="video/mp4">
-              Your browser does not support the video tag. </video>
+            <video width="1100" controls>
+                <source src="alexag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
+
+    <script>
+        // Intersection Observer to pause videos when not in view
+        const videos = document.querySelectorAll('video');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const video = entry.target;
+                if (entry.isIntersecting) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the video is visible
+        });
+
+        // Observe all videos
+        videos.forEach(video => {
+            observer.observe(video);
+        });
+    </script>
 </body>
 </html>
